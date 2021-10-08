@@ -64,7 +64,7 @@ def _patch_ir_attachment_store(force_db_storage):
         finally:
             IrAttachment._storage = orig
 
-def odoo_createdb_without_cache(dbname, demo,module_names, lang, password, login, country, phone):
+def odoo_createdb_without_cache(dbname, demo, module_names, lang, password, login, country, phone):
     odoo.tools.config["init"] = dict.fromkeys(module_names, 1)
     odoo.service.db._exp_create_database(dbname, demo, lang, password, login, country, phone)
 
